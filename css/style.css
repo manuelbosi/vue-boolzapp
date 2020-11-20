@@ -1,0 +1,32 @@
+/* REGOLE GENERALI */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #d8dbd3;
+  padding: 2% 0;
+}
+
+/* BACKGROUND */
+#green-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #089a8b;
+  min-height: 100px;
+  z-index: 500;
+}
+
+
+/* APP */
+#app-container {
+  width: 80%;
+  min-height: 90vh;
+  margin: 0 auto;
+  background-color: lightblue;
+  z-index: 900;
+  position: relative;
+
+}
