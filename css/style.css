@@ -50,15 +50,15 @@ body {
   background-color: lightgreen;
 }
 
-/* ======= APP LEFT ====== */
-
-/* USER PROFILE */
-#app-left .user-profile {
+/* USER PROFILE BAR */
+#app-left .user-profile,
+#app-right .user-profile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 10px;
   background-color: #eaeaea;
+  height: 80px;
 }
 .user-profile > .left,
 .user-profile > .right {
@@ -67,14 +67,14 @@ body {
   align-items: center;
 }
 .user-profile .left .profile-pic {
-  flex-basis: 20%;
+  flex-basis: 30%;
 }
 .user-profile .left .profile-pic img {
   max-width: 100%;
   border-radius: 50%;
 }
 .left > .username {
-  flex-basis: 80%;
+  flex-basis: 70%;
   margin-left: 10px;
 }
 .user-profile > .right {
@@ -86,12 +86,15 @@ body {
   font-size: 20px;
 }
 
+
+/* ======= APP LEFT ====== */
+
 /* NOTIFICATIONS */
 .notifications {
   background-color: #76dcff;
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 25px 10px;
 }
 .notifications .icon {
   background-color: #f0fbff;
@@ -115,14 +118,14 @@ body {
   background-color: #fafafa;
   position: relative;
 }
-.search-box input {
+.search-box > input {
   padding: 10px;
   width: 100%;
   border: none;
   color: grey;
   padding-left: 60px;
 }
-.search-box i {
+.search-box > i {
   position: absolute;
   left: 30px;
   color: lightgrey;
@@ -133,4 +136,30 @@ body {
   background: #ffffff;
   display: flex;
   flex-direction: column;
+  height: 390px;
+  overflow-y: auto;
 }
+.recent-chat > .chat {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.recent-chat > .chat > .left {
+  flex-basis: 40%;
+  display: flex;
+}
+.recent-chat > .chat > .left img {
+  max-width: 90%;
+  border-radius: 50%;
+}
+.recent-chat > .chat > .left .info {
+  padding-left: 20px;
+}
+.recent-chat > .chat > .right {
+  flex-basis: 60%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* APP RIGHT */
+
