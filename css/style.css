@@ -47,7 +47,7 @@ body {
 }
 #app-right {
   width: 70%;
-  background-color: lightgreen;
+  background-image: url(../img/mine.jpg);
 }
 
 /* USER PROFILE BAR */
@@ -59,6 +59,9 @@ body {
   padding: 10px 10px;
   background-color: #eaeaea;
   height: 80px;
+}
+#app-left > .user-profile {
+  border-right: 1px solid #ccc;
 }
 .user-profile .left,
 .user-profile .right {
@@ -77,7 +80,8 @@ IN ALTEZZA */
   flex-basis: 30%;
 }
 .user-profile .left .profile-pic > img {
-  max-width: 100%;
+  max-width: 60px;
+  max-height: 100%;
   border-radius: 50%;
 }
 .left > .username {
@@ -117,6 +121,10 @@ IN ALTEZZA */
 .notifications .info {
   margin-left: 10px;
 }
+.notifications .info * {
+  margin: 5px 0;
+}
+
 
 /* SEARCH BOX */
 .search-box {
@@ -147,6 +155,7 @@ IN ALTEZZA */
   flex-direction: column;
   height: 390px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .recent-chat > .chat {
   display: flex;
@@ -171,7 +180,40 @@ IN ALTEZZA */
 }
 
 /* APP RIGHT */
-
 #app-right .left > .profile-pic {
-  flex-basis: 30%;
+  flex-basis: 15%;
+}
+
+/* CURRENT CHAT */
+.current-chat {
+  padding: 30px;
+}
+.row {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  background-color: lightcyan;
+  min-height: 50px;
+  border: 1px solid #ccc;
+}
+.row.sent {
+  text-align: center;
+  justify-content: flex-end;
+}
+.row.received {
+  text-align: left;
+  justify-content: flex-start;
+}
+.message-sent {
+  min-height: 20px;
+  background-color: #cbfbb3;
+}
+.message-received {
+  min-height: 20px;
+  background-color: #ffffff;
+}
+.message-sent,
+.message-received {
+  padding: 15px;
+  border-radius: 10px;
 }
