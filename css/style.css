@@ -63,42 +63,15 @@ body {
 .user-profile .left,
 .user-profile .right {
   display: flex;
-  flex-basis: 50%;
   align-items: center;
 }
-.user-profile .left > .profile-pic {
-  flex-basis: 30%;
+.user-profile .left {
+  flex-basis: 60%;
 }
-.user-profile .left .profile-pic > img {
-  max-width: 60px;
-  border-radius: 50%;
-}
-.left > .username {
-  flex-basis: 70%;
-  margin-left: 10px;
-}
-.user-profile > .right {
-  justify-content: flex-end;
-}
-.user-profile > .right > .fas {
-  margin: 0 15px;
-  color: grey;
-  font-size: 20px;
-}
-/* #app-left > .user-profile,
-#app-right > .user-profile {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 10px 10px;
-  background-color: #eaeaea;
-  height: 80px;
-}
-.user-profile > .left,
-.user-profile > .right {
-  flex-basis: 50%;
-  display: flex;
-  align-items: center;
+/* SE METTO FLEX BASIS A 50% PROBLEMA VIEWPORT
+IN ALTEZZA */
+.user-profile .right {
+  flex-basis: 40%;
 }
 .user-profile .left > .profile-pic {
   flex-basis: 30%;
@@ -115,11 +88,13 @@ body {
   justify-content: flex-end;
 }
 .user-profile > .right > .fas {
-  margin: 0 15px;
-  color: grey;
+  margin: 0 10px;
+  color: #b1b1b1;
   font-size: 20px;
-} */
-
+}
+.user-profile > .left span {
+  color: grey;
+}
 
 /* ======= APP LEFT ====== */
 
@@ -162,7 +137,7 @@ body {
 .search-box > i {
   position: absolute;
   left: 30px;
-  color: lightgrey;
+  color: #b1b1b1;
 }
 
 /* RECENT CHAT */
@@ -197,3 +172,6 @@ body {
 
 /* APP RIGHT */
 
+#app-right .left > .profile-pic {
+  flex-basis: 30%;
+}
