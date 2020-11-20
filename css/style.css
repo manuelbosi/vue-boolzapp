@@ -51,24 +51,46 @@ body {
 }
 
 /* APP LEFT */
-#app-left > div {
+#app-left .notifications,
+#app-left .search-box,
+#app-left .recent-chat {
   background: lightseagreen;
 
   /* debug */
-  height: calc(100% / 4);
+  height: calc(100% / 3);
 }
+/* USER PROFILE */
 #app-left .user-profile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 10px 10px;
+  background-color: #eaeaea;
 }
 .user-profile > .left,
 .user-profile > .right {
-  background-color: lime;
-  height: 50px;
   flex-basis: 50%;
+  display: flex;
+  align-items: center;
+}
+.left .profile-pic {
+  flex-basis: 20%;
+}
+.left .profile-pic img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.left > .username {
+  flex-basis: 80%;
+  margin-left: 10px;
+}
+.user-profile > .right {
+  justify-content: flex-end;
+}
+.user-profile > .right > .fas {
+  margin: 0 15px;
+  color: grey;
+  font-size: 20px;
 }
 
-
-
-/* APP RIGHT */
+/* NOTIFICATIONS */
