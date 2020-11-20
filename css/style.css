@@ -2,10 +2,12 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   background-color: #d8dbd3;
   padding: 2% 0;
+  overflow: hidden;
 }
 
 /* BACKGROUND */
@@ -19,14 +21,29 @@ body {
   z-index: 500;
 }
 
-
 /* APP */
 #app-container {
   width: 80%;
-  min-height: 90vh;
+  height: 90vh;
   margin: 0 auto;
-  background-color: lightblue;
+  background-color: #eaeaea;
   z-index: 900;
   position: relative;
-
+}
+#app-container::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+#app-left, #app-right {
+  float: left;
+  height: 100%;
+}
+#app-left {
+  width: 30%;
+  background-color: lightcoral;
+}
+#app-right {
+  width: 70%;
+  background-color: lightgreen;
 }
