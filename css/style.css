@@ -1,4 +1,4 @@
-/* REGOLE GENERALI */
+/* GENERAL */
 * {
   margin: 0;
   padding: 0;
@@ -21,7 +21,7 @@ body {
   z-index: 500;
 }
 
-/* APP */
+/* APP GENERAL */
 #app-container {
   width: 80%;
   height: 90vh;
@@ -42,8 +42,33 @@ body {
 #app-left {
   width: 30%;
   background-color: lightcoral;
+  display: flex;
+  flex-direction: column;
 }
 #app-right {
   width: 70%;
   background-color: lightgreen;
 }
+
+/* APP LEFT */
+#app-left > div {
+  background: lightseagreen;
+
+  /* debug */
+  height: calc(100% / 4);
+}
+#app-left .user-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.user-profile > .left,
+.user-profile > .right {
+  background-color: lime;
+  height: 50px;
+  flex-basis: 50%;
+}
+
+
+
+/* APP RIGHT */
