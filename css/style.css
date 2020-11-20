@@ -41,7 +41,7 @@ body {
 }
 #app-left {
   width: 30%;
-  background-color: lightcoral;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
 }
@@ -51,8 +51,8 @@ body {
 }
 
 /* USER PROFILE BAR */
-#app-left .user-profile,
-#app-right .user-profile {
+#app-left > .user-profile,
+#app-right > .user-profile {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -60,17 +60,17 @@ body {
   background-color: #eaeaea;
   height: 80px;
 }
-.user-profile > .left,
-.user-profile > .right {
-  flex-basis: 50%;
+.user-profile .left,
+.user-profile .right {
   display: flex;
+  flex-basis: 50%;
   align-items: center;
 }
-.user-profile .left .profile-pic {
+.user-profile .left > .profile-pic {
   flex-basis: 30%;
 }
-.user-profile .left .profile-pic img {
-  max-width: 100%;
+.user-profile .left .profile-pic > img {
+  max-width: 60px;
   border-radius: 50%;
 }
 .left > .username {
@@ -85,6 +85,40 @@ body {
   color: grey;
   font-size: 20px;
 }
+/* #app-left > .user-profile,
+#app-right > .user-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px 10px;
+  background-color: #eaeaea;
+  height: 80px;
+}
+.user-profile > .left,
+.user-profile > .right {
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+}
+.user-profile .left > .profile-pic {
+  flex-basis: 30%;
+}
+.user-profile .left .profile-pic > img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.left > .username {
+  flex-basis: 70%;
+  margin-left: 10px;
+}
+.user-profile > .right {
+  justify-content: flex-end;
+}
+.user-profile > .right > .fas {
+  margin: 0 15px;
+  color: grey;
+  font-size: 20px;
+} */
 
 
 /* ======= APP LEFT ====== */
