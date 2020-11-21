@@ -8,6 +8,8 @@ body {
   background-color: #d8dbd3;
   padding: 2% 0;
   overflow: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #c8c8c8 #f1f1f1;
 }
 .fas, .far {
   cursor: pointer;
@@ -80,10 +82,10 @@ IN ALTEZZA */
 }
 .user-profile .left > .profile-pic {
   flex-basis: 30%;
+  text-align: center;
 }
 .user-profile .left .profile-pic > img {
-  max-width: 60px;
-  max-height: 100%;
+  max-width: 100%;
   border-radius: 50%;
 }
 .left > .username {
@@ -166,6 +168,8 @@ IN ALTEZZA */
   height: 500px;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #c8c8c8 #f1f1f1;
 }
 #recent-chat > .chat {
   display: flex;
@@ -190,6 +194,11 @@ IN ALTEZZA */
   flex-basis: 60%;
   display: flex;
   justify-content: flex-end;
+  color: #b1b1b1;
+  font-size: 14px;
+}
+#recent-chat > .chat .last-msg {
+  color: #b1b1b1;
 }
 
 /* APP RIGHT */
@@ -213,6 +222,8 @@ IN ALTEZZA */
   overflow-y: auto;
   overflow-x: hidden;
   height: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #c8c8c8 #f1f1f1;
 }
 .row {
   margin: 10px 0;
