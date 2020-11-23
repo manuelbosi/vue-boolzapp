@@ -165,7 +165,7 @@ IN ALTEZZA */
 #recent-chat {
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 530px;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
@@ -266,7 +266,7 @@ IN ALTEZZA */
 /* TYPE MESSAGE BAR */
 #message-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 20px;
   /* debug */
