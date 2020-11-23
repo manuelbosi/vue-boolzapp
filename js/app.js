@@ -49,6 +49,7 @@ const app = new Vue({
     activeSentMsg: [],
     activeReceivedMsg: [],
     isActiveChat: false
+
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -56,16 +57,16 @@ const app = new Vue({
       console.log("INDICE ELEMENTO CLICCATO", i);
       
       // CAMBIO VALORI USERBAR
-      this.activeUser = this.chatList[i].nome
-      this.activePic = this.chatList[i].profilePic
-      this.activeLastMsgDate = this.chatList[i].lastMessageDate
-      this.activeSentMsg = this.chatList[i].sentMessages
+      this.activeUser = this.chatList[i].nome;
+      this.activePic = this.chatList[i].profilePic;
+      this.activeLastMsgDate = this.chatList[i].lastMessageDate;
+      this.activeSentMsg = this.chatList[i].sentMessages;
       console.log(this.activeSentMsg);
-      this.activeReceivedMsg = this.chatList[i].receivedMessages
+      this.activeReceivedMsg = this.chatList[i].receivedMessages;
       console.log(this.activeReceivedMsg);
 
       // Cambio variabile per mostrare chat cliccata
-      this.isActiveChat = true
+      this.isActiveChat = true;
       
     }
   }
