@@ -77,7 +77,7 @@
       
 
       <!-- RIGHT SIDE -->
-      <div id="app-right" v-if="isActiveChat">
+      <div id="app-right">
 
         <div class="user-profile">
 
@@ -104,36 +104,17 @@
         <!-- CURRENT CHAT -->
         <div class="current-chat">
 
-          <div class="row sent">
-            <div class="message-sent">
-              Test
-              <span>10/01/2020 15:30:55</span>
-            </div>
-            
-          </div>
-  
-          <div class="row received">
-            <div class="message-received">
-              Test
-              <span>10/01/2020 15:30:55</span>
-            </div>
+         
+          <div class="message-sent">
+            <p>Test</p>
+            <span>10/01/2020 15:30:55</span>
           </div>
 
-          <div class="row sent">
-            <div class="message-sent">
-              Test
-              <span>10/01/2020 15:30:55</span>
-            </div>
-            
+          <div class="message-received">
+            <p>Test</p>
+            <span>10/01/2020 15:30:55</span>
           </div>
-  
-          <div class="row received">
-            <div class="message-received">
-              Test
-              <span>10/01/2020 15:30:55</span>
-            </div>
-          </div>
-          
+         
         </div>
 
         <!-- TYPE MESSAGE BAR -->
@@ -147,9 +128,9 @@
 
       </div>
 
-      <div id="no-active-chat" v-else="isActiveChat">
+      <!-- <div id="no-active-chat" v-else="isActiveChat">
         <h1 style="text-align: center;">CLICCA UNA CHAT PER INIZIARE</h1>
-      </div>
+      </div> -->
       
 
     </div>
