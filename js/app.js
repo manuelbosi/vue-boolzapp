@@ -47,7 +47,8 @@ const app = new Vue({
     activePic: "img/avatar_8.jpg",
     activeLastMsgDate: "",
     activeSentMsg: [],
-    activeReceivedMsg: []
+    activeReceivedMsg: [],
+    isActiveChat: false
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -62,6 +63,9 @@ const app = new Vue({
       console.log(this.activeSentMsg);
       this.activeReceivedMsg = this.chatList[i].receivedMessages
       console.log(this.activeReceivedMsg);
+
+      // Cambio variabile per mostrare chat cliccata
+      this.isActiveChat = true
       
     }
   }
