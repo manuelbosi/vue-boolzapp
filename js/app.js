@@ -9,7 +9,7 @@ const app = new Vue({
     // immagine, nome, messaggi ricevuti, messaggi inviati, data ultimo messaggio, ultimo messaggio
     // Messaggi ricevuti: array di stringhe
     // Messaggi inviati: array di stringhe
-    chatlist: [
+    chatList: [
       { 
       profilePic: "img/avatar_1.jpg", 
       nome: "Michele", 
@@ -35,7 +35,7 @@ const app = new Vue({
       lastMessage: ""      
       },
       {
-      profilePic: "img/avatar_3.jpg", 
+      profilePic: "img/avatar_4.jpg", 
       nome: "Luisa", 
       receivedMessages: ["Ciao Luisa", "perchè hai i baffi"], 
       sentMessages:["Ciao", "cosa ti interessa?"],

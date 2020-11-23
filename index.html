@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css">
   <title>Vue Js - Boolzapp</title>
@@ -57,18 +57,18 @@
         <!-- RECENT CHAT -->       
         <div id="recent-chat">
 
-          <div class="chat">
+          <div v-for="item in chatList" class="chat">
             <div class="left">
               <div class="profile-pic">
-                <img src="img/avatar_1.jpg" alt="">
+                <img :src="item.profilePic" alt="profile">
               </div>
               <div class="info">
-                <h3>Michele</h3>
-                <span class="last-msg">okok</span>
+                <h3> {{ item.nome }} </h3>
+                <span class="last-msg">{{ item.lastMessage }}</span>
               </div>
             </div>  
             <div class="right">
-              <span>20 11 2020 10:52:03</span>
+              <span>{{ item.lastMessageDate }}</span>
             </div>
           </div>
 
@@ -116,20 +116,6 @@
               <span>10/01/2020 15:30:55</span>
             </div>
           </div>
-
-          <div class="row sent">
-            <div class="message-sent">
-              Va bene
-              <span>10/01/2020 15:30:55</span>
-            </div>
-          </div>
-  
-          <div class="row received">
-            <div class="message-received">
-              ok
-              <span>10/01/2020 15:30:55</span>
-            </div>
-          </div>
           
         </div>
 
@@ -150,5 +136,6 @@
     </div>
   </div>
   
+  <script src="js/app.js"></script>
 </body>
 </html>

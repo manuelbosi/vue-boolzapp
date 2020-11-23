@@ -175,6 +175,7 @@ IN ALTEZZA */
   display: flex;
   padding: 10px;
   border-bottom: 1px solid #b1b1b1;
+  cursor: pointer;
 }
 #recent-chat > .chat:hover {
   background-color: #ececec;
@@ -182,6 +183,9 @@ IN ALTEZZA */
 #recent-chat > .chat > .left {
   flex-basis: 40%;
   display: flex;
+}
+#recent-chat > .chat > .left .profile-pic {
+  flex-basis: 45%;
 }
 #recent-chat > .chat > .left img {
   max-width: 90%;
