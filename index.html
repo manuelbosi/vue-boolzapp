@@ -104,17 +104,17 @@
         <!-- CURRENT CHAT -->
         <div class="current-chat">
 
-          <div class="row sent">
+          <div v-for="item in activeReceivedMsg" class="row sent">
             <div class="message-sent">
-              Sì ma preferirei andare al cinema
+               {{ item }}
               <span>10/01/2020 15:30:55</span>
             </div>
             
           </div>
   
-          <div class="row received">
+          <div v-for="item in activeSentMsg" class="row received">
             <div class="message-received">
-              Sì ma preferirei andare al cinema
+              {{ item }}
               <span>10/01/2020 15:30:55</span>
             </div>
           </div>
