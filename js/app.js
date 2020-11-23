@@ -15,7 +15,7 @@ const app = new Vue({
       nome: "Michele", 
       receivedMessages: ["Ciao", "come ti chiami?"], 
       sentMessages:["Ciao", "mi chiamo Michele"],
-      lastMessageDate: "20 11 2020 10:52:03",
+      lastMessageDate: "01 11 2020 10:52:03",
       lastMessage: "test michele"
       },
       {
@@ -23,7 +23,7 @@ const app = new Vue({
       nome: "Fabio", 
       receivedMessages: ["Ciao Fabio", "come stai?"], 
       sentMessages:["Ciao", "io bene tu?"],
-      lastMessageDate: "20 11 2020 10:52:03",
+      lastMessageDate: "02 11 2020 10:52:03",
       lastMessage: "test fabio"
       },
       {
@@ -31,7 +31,7 @@ const app = new Vue({
       nome: "Samuele", 
       receivedMessages: ["Ciao Samuele", "come stai?"], 
       sentMessages:["Ciao", "male tu?"],
-      lastMessageDate: "20 11 2020 10:52:03",
+      lastMessageDate: "03 11 2020 10:52:03",
       lastMessage: "test samuele"      
       },
       {
@@ -39,9 +39,24 @@ const app = new Vue({
       nome: "Luisa", 
       receivedMessages: ["Ciao Luisa", "perchè hai i baffi"], 
       sentMessages:["Ciao", "cosa ti interessa?"],
-      lastMessageDate: "20 11 2020 10:52:03",
+      lastMessageDate: "04 11 2020 10:52:03",
       lastMessage: "test luisa"
       }
-    ]
+    ],
+    activeUser: "Nome Utente",
+    activePic: "img/avatar_8.jpg",
+    activeLastMsgDate: "20 11 2020 12:01:32"
+  },
+  methods: {
+    // Al click su ogni chat cambia la chat corrente
+    changeChat(i) {
+      console.log("INDICE ELEMENTO CLICCATO", i);
+      
+      // Cambio il valore del nome con quello cliccato
+      this.activeUser = this.chatList[i].nome
+      this.activePic = this.chatList[i].profilePic
+      this.activeLastMsgDate = this.chatList[i].lastMessageDate
+      
+    }
   }
 });

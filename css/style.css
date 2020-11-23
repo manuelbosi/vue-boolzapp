@@ -291,3 +291,9 @@ IN ALTEZZA */
   font-size: 30px;
   color: grey;
 }
+
+
+/* VUE JS CLASS */
+.active {
+  background-color: #747474;
+}

@@ -57,7 +57,7 @@
         <!-- RECENT CHAT -->       
         <div id="recent-chat">
 
-          <div v-for="(item, index) in chatList" class="chat">
+          <div v-for="(item, index) in chatList" class="chat" @click="changeChat(index)">
             <div class="left">
               <div class="profile-pic">
                 <img :src="item.profilePic" alt="profile">
@@ -83,11 +83,13 @@
 
           <div class="left">
             <div class="profile-pic">
-              <img src="img/avatar_4.jpg" alt="">
+              <img :src="activePic" alt="">
             </div>
             <div class="username">
-              <h4>Nome Utente</h4>
-              <span>Ultimo accesso oggi alle 20 11 2020 12:01:32</span>
+              <h4 v-model="activeUser"> {{ activeUser }}</h4>
+              <span>Ultimo accesso oggi alle 
+                <span v-model="activeLastMsgDate"> {{ activeLastMsgDate }} </span>
+              </span>
             </div>
           </div>
 
@@ -111,7 +113,7 @@
           </div>
   
           <div class="row received">
-            <div v:for="elenco msg ricevuti" class="message-received">
+            <div class="message-received">
               Sì ma preferirei andare al cinema
               <span>10/01/2020 15:30:55</span>
             </div>
