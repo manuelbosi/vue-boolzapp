@@ -233,12 +233,10 @@ IN ALTEZZA */
   scrollbar-color: #c8c8c8 #f1f1f1;
 }
 .message-sent {
-  min-height: 20px;
   background-color: #cbfbb3;
   margin-left: 60%;
 }
 .message-received {
-  min-height: 20px;
   background-color: #ffffff;
   margin-left: 10%;
 }
@@ -249,6 +247,7 @@ IN ALTEZZA */
   position: relative;
   font-size: 18px;
   width: 30%;
+  margin-bottom: 10px;
 }
 .message-sent span,
 .message-received span {

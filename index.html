@@ -57,7 +57,7 @@
         <!-- RECENT CHAT -->       
         <div id="recent-chat">
 
-          <div v-for="(item, index) in chatList" class="chat" @click="changeChat(index)">
+          <div v-for="(item, indexChat) in chatList" class="chat" @click="changeChat(indexChat)">
             <div class="left">
               <div class="profile-pic">
                 <img :src="item.profilePic" alt="profile">
@@ -105,13 +105,13 @@
         <div class="current-chat">
 
          
-          <div class="message-sent">
-            <p>Test</p>
+          <div v-for="el in chatList" class="message-sent">
+            <p>{{ el.messaggi[0].testo }}</p>
             <span>10/01/2020 15:30:55</span>
           </div>
 
-          <div class="message-received">
-            <p>Test</p>
+          <div v-for="el in chatList" class="message-received">
+            <p>{{ el.messaggi[1].testo }}</p>
             <span>10/01/2020 15:30:55</span>
           </div>
          
