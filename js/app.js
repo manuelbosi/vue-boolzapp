@@ -45,7 +45,9 @@ const app = new Vue({
     ],
     activeUser: "Clicca una chat per visualizzare i messaggi",
     activePic: "img/avatar_8.jpg",
-    activeLastMsgDate: ""
+    activeLastMsgDate: "",
+    activeSentMsg: [],
+    activeReceivedMsg: []
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -60,6 +62,12 @@ const app = new Vue({
 
       // Cambio l'ultimo accesso con quello cliccato
       this.activeLastMsgDate = this.chatList[i].lastMessageDate
+
+      this.activeSentMsg = this.chatList[i].sentMessages
+      console.log(this.activeSentMsg);
+
+      this.activeReceivedMsg = this.chatList[i].receivedMessages
+      console.log(this.activeReceivedMsg);
       
     }
   }
