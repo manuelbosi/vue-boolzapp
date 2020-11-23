@@ -54,18 +54,12 @@ const app = new Vue({
     changeChat(i) {
       console.log("INDICE ELEMENTO CLICCATO", i);
       
-      // Cambio il valore del nome con quello cliccato
+      // CAMBIO VALORI USERBAR
       this.activeUser = this.chatList[i].nome
-
-      // Cambio l'immagine con quella cliccata
       this.activePic = this.chatList[i].profilePic
-
-      // Cambio l'ultimo accesso con quello cliccato
       this.activeLastMsgDate = this.chatList[i].lastMessageDate
-
       this.activeSentMsg = this.chatList[i].sentMessages
       console.log(this.activeSentMsg);
-
       this.activeReceivedMsg = this.chatList[i].receivedMessages
       console.log(this.activeReceivedMsg);
       
