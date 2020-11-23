@@ -119,7 +119,7 @@ IN ALTEZZA */
 #notifications .icon {
   flex-basis: 10%;
   background-color: #f0fbff;
-  border-radius: 50%;
+  border-radius: 50px;
   padding: 10px;
   text-align: center;
 }
