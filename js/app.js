@@ -43,9 +43,9 @@ const app = new Vue({
       lastMessage: "test luisa"
       }
     ],
-    activeUser: "Nome Utente",
+    activeUser: "Clicca una chat per visualizzare i messaggi",
     activePic: "img/avatar_8.jpg",
-    activeLastMsgDate: "20 11 2020 12:01:32"
+    activeLastMsgDate: ""
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -54,7 +54,11 @@ const app = new Vue({
       
       // Cambio il valore del nome con quello cliccato
       this.activeUser = this.chatList[i].nome
+
+      // Cambio l'immagine con quella cliccata
       this.activePic = this.chatList[i].profilePic
+
+      // Cambio l'ultimo accesso con quello cliccato
       this.activeLastMsgDate = this.chatList[i].lastMessageDate
       
     }
