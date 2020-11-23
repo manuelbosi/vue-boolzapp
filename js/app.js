@@ -12,42 +12,44 @@ const app = new Vue({
     chatList: [
       { 
       profilePic: "img/avatar_1.jpg", 
-      nome: "Michele", 
-      receivedMessages: ["Ciao", "come ti chiami?"], 
-      sentMessages:["Ciao", "mi chiamo Michele"],
+      nome: "Michele",
       lastMessageDate: "01 11 2020 10:52:03",
-      lastMessage: "test michele"
+      lastMessage: "test michele",
+      messaggi: [ 
+        { testo: "messaggio per Michele", mioMessaggio: true },
+        { testo: "risposta da Michele", mioMessaggio: false } ]
       },
       {
       profilePic: "img/avatar_2.jpg", 
-      nome: "Fabio", 
-      receivedMessages: ["Ciao Fabio", "come stai?"], 
-      sentMessages:["Ciao", "io bene tu?"],
+      nome: "Fabio",
       lastMessageDate: "02 11 2020 10:52:03",
-      lastMessage: "test fabio"
+      lastMessage: "test fabio",
+      messaggi: [ 
+        { testo: "messaggio per Fabio", mioMessaggio: true },
+        { testo: "risposta da Fabio", mioMessaggio: false } ]
       },
       {
       profilePic: "img/avatar_3.jpg", 
-      nome: "Samuele", 
-      receivedMessages: ["Ciao Samuele", "come stai?"], 
-      sentMessages:["Ciao", "male tu?"],
+      nome: "Samuele",
       lastMessageDate: "03 11 2020 10:52:03",
-      lastMessage: "test samuele"      
+      lastMessage: "test samuele",
+      messaggi: [ 
+        { testo: "messaggio per Samuele", mioMessaggio: true },
+        { testo: "risposta da Samuele", mioMessaggio: false } ]      
       },
       {
       profilePic: "img/avatar_4.jpg", 
-      nome: "Luisa", 
-      receivedMessages: ["Ciao Luisa", "perchè hai i baffi"], 
-      sentMessages:["Ciao", "cosa ti interessa?"],
+      nome: "Luisa",
       lastMessageDate: "04 11 2020 10:52:03",
-      lastMessage: "test luisa"
+      lastMessage: "test luisa",
+      messaggi: [ 
+        { testo: "messaggio per Luisa", mioMessaggio: true },
+        { testo: "risposta da Luisa", mioMessaggio: false } ]
       }
     ],
     activeUser: "Clicca una chat per visualizzare i messaggi",
     activePic: "img/avatar_8.jpg",
     activeLastMsgDate: "",
-    activeSentMsg: [],
-    activeReceivedMsg: [],
     isActiveChat: false
 
   },
@@ -60,10 +62,7 @@ const app = new Vue({
       this.activeUser = this.chatList[i].nome;
       this.activePic = this.chatList[i].profilePic;
       this.activeLastMsgDate = this.chatList[i].lastMessageDate;
-      this.activeSentMsg = this.chatList[i].sentMessages;
-      console.log(this.activeSentMsg);
-      this.activeReceivedMsg = this.chatList[i].receivedMessages;
-      console.log(this.activeReceivedMsg);
+      
 
       // Cambio variabile per mostrare chat cliccata
       this.isActiveChat = true;
