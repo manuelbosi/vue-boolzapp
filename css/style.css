@@ -181,25 +181,28 @@ IN ALTEZZA */
   background-color: #ececec;
 }
 #recent-chat > .chat > .left {
-  flex-basis: 40%;
+  flex-basis: 65%;
   display: flex;
 }
 #recent-chat > .chat > .left .profile-pic {
   flex-basis: 45%;
+  flex-shrink: 0;
 }
 #recent-chat > .chat > .left img {
-  max-width: 90%;
+  max-width: 80%;
   border-radius: 50%;
 }
 #recent-chat > .chat > .left .info {
-  padding-left: 20px;
+  padding-left: 0;
 }
 #recent-chat > .chat > .right {
-  flex-basis: 60%;
+  flex-basis: 35%;
   display: flex;
   justify-content: flex-end;
   color: #b1b1b1;
   font-size: 14px;
+  
+  flex-shrink: 0;
 }
 #recent-chat > .chat .last-msg {
   color: #b1b1b1;

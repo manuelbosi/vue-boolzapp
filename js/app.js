@@ -16,7 +16,7 @@ const app = new Vue({
       receivedMessages: ["Ciao", "come ti chiami?"], 
       sentMessages:["Ciao", "mi chiamo Michele"],
       lastMessageDate: "20 11 2020 10:52:03",
-      lastMessage: ""
+      lastMessage: "test michele"
       },
       {
       profilePic: "img/avatar_2.jpg", 
@@ -24,7 +24,7 @@ const app = new Vue({
       receivedMessages: ["Ciao Fabio", "come stai?"], 
       sentMessages:["Ciao", "io bene tu?"],
       lastMessageDate: "20 11 2020 10:52:03",
-      lastMessage: ""
+      lastMessage: "test fabio"
       },
       {
       profilePic: "img/avatar_3.jpg", 
@@ -32,7 +32,7 @@ const app = new Vue({
       receivedMessages: ["Ciao Samuele", "come stai?"], 
       sentMessages:["Ciao", "male tu?"],
       lastMessageDate: "20 11 2020 10:52:03",
-      lastMessage: ""      
+      lastMessage: "test samuele"      
       },
       {
       profilePic: "img/avatar_4.jpg", 
@@ -40,7 +40,7 @@ const app = new Vue({
       receivedMessages: ["Ciao Luisa", "perchè hai i baffi"], 
       sentMessages:["Ciao", "cosa ti interessa?"],
       lastMessageDate: "20 11 2020 10:52:03",
-      lastMessage: ""
+      lastMessage: "test luisa"
       }
     ]
   }

@@ -57,7 +57,7 @@
         <!-- RECENT CHAT -->       
         <div id="recent-chat">
 
-          <div v-for="item in chatList" class="chat">
+          <div v-for="(item, index) in chatList" class="chat">
             <div class="left">
               <div class="profile-pic">
                 <img :src="item.profilePic" alt="profile">
@@ -102,7 +102,7 @@
         <!-- CURRENT CHAT -->
         <div class="current-chat">
 
-          <div class="row sent">
+          <div  v:for="messagge in item.sentMessages" class="row sent">
             <div class="message-sent">
               Lo sai che ha aperto una nuova pizzeria?
               <span>10/01/2020 15:30:55</span>
@@ -111,7 +111,7 @@
           </div>
   
           <div class="row received">
-            <div class="message-received">
+            <div v:for="elenco msg ricevuti" class="message-received">
               Sì ma preferirei andare al cinema
               <span>10/01/2020 15:30:55</span>
             </div>
