@@ -104,17 +104,32 @@
         <!-- CURRENT CHAT -->
         <div class="current-chat">
 
-          <div v-for="item in activeReceivedMsg" class="row sent">
+          <div class="row sent">
             <div class="message-sent">
-               {{ item }}
+               {{ activeReceivedMsg[0] }}
               <span>10/01/2020 15:30:55</span>
             </div>
             
           </div>
   
-          <div v-for="item in activeSentMsg" class="row received">
+          <div class="row received">
             <div class="message-received">
-              {{ item }}
+              {{ activeSentMsg[0] }}
+              <span>10/01/2020 15:30:55</span>
+            </div>
+          </div>
+
+          <div class="row sent">
+            <div class="message-sent">
+               {{ activeReceivedMsg[1] }}
+              <span>10/01/2020 15:30:55</span>
+            </div>
+            
+          </div>
+  
+          <div class="row received">
+            <div class="message-received">
+              {{ activeSentMsg[1] }}
               <span>10/01/2020 15:30:55</span>
             </div>
           </div>
