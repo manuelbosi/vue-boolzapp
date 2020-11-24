@@ -47,7 +47,7 @@ const app = new Vue({
     ],
     isActiveChat: false,
     indexActive: 5, // altrimenti mi seleziona di default index 0
-    lastMsgIndex: 1 // indice ultimo msg come faccio?
+    yourMessage: ""
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -64,7 +64,38 @@ const app = new Vue({
       // Cambio l'indice attivo
       // e assegno il valore di indexChat riga 60 html
       this.indexActive = i
-      console.log(this.chatList[this.indexActive].messaggi[this.chatList[this.indexActive].messaggi.length-1].date);
+      // console.log(this.chatList[this.indexActive].messaggi[this.chatList[this.indexActive].messaggi.length-1].date);
+    },
+    sendMessage() {
+
+      // Creo un nuovo oggetto messaggio da inserire
+      let newMessage = {
+        testo: this.yourMessage,
+        mioMessaggio: true,
+        date: "24/11/2020 10:30:55"
+      };
+
+      // Pusho il nuovo messaggio nella chat attiva
+      this.chatList[this.indexActive].messaggi.push(newMessage);
+
+      // Ripulisco l'input
+      this.yourMessage = "";
+
+      let autoReponse = {
+        testo: "risposta automatica",
+        mioMessaggio: false,
+        date: "24/11/2020 10:30:55"
+      }
+
+      // Faccio partire un timer di 1 secondo che esegue la funzione
+      // Con la funziona normale non va con l'arrow function sì
+      // 
+      setTimeout(() => {
+        // Pusho la risposta automatica nella chat attiva
+        this.chatList[this.indexActive].messaggi.push(autoReponse);
+      }, 1000);
+      
     }
+
   }
 });

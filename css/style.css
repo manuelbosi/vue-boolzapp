@@ -194,6 +194,7 @@ IN ALTEZZA */
 }
 #recent-chat > .chat > .left .info {
   padding-left: 0;
+  flex-wrap: wrap;
 }
 #recent-chat > .chat > .right {
   flex-basis: 35%;
@@ -201,7 +202,6 @@ IN ALTEZZA */
   justify-content: flex-end;
   color: #b1b1b1;
   font-size: 14px;
-  
   flex-shrink: 0;
 }
 #recent-chat > .chat .last-msg {
@@ -246,8 +246,12 @@ IN ALTEZZA */
   border-radius: 10px;
   position: relative;
   font-size: 18px;
-  width: 30%;
+  width: 40%;
   margin-bottom: 10px;
+}
+.message-sent p,
+.message-received p{
+  text-overflow: ellipsis;
 }
 .message-sent span,
 .message-received span {
