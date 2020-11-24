@@ -57,7 +57,7 @@
         <!-- RECENT CHAT -->       
         <div id="recent-chat">
 
-          <div v-for="(item, indexChat) in chatList" class="chat" @click="changeChat(indexChat)">
+          <div v-for="(item, indexChat) in chatList" class="chat" :class="indexChat === indexActive ? 'active' : ''" @click="changeChat(indexChat)">
             <div class="left">
               <div class="profile-pic">
                 <img :src="item.profilePic" alt="profile">
@@ -77,18 +77,18 @@
       
 
       <!-- RIGHT SIDE -->
-      <div id="app-right">
+      <div id="app-right" v-if="isActiveChat">
 
         <div class="user-profile">
 
           <div class="left">
             <div class="profile-pic">
-              <img :src="activePic" alt="">
+              <img :src="chatList[indexActive].profilePic" alt="">
             </div>
             <div class="username">
-              <h4 v-model="activeUser"> {{ activeUser }}</h4>
+              <h4 v-model="activeUser"> {{ chatList[indexActive].nome }}</h4>
               <span>Ultimo accesso
-                <span v-model="activeLastMsgDate"> {{ activeLastMsgDate }} </span>
+                <span v-model="activeLastMsgDate"> {{ chatList[indexActive].lastMessageDate }} </span>
               </span>
             </div>
           </div>
@@ -124,9 +124,9 @@
 
       </div>
 
-      <!-- <div id="no-active-chat" v-else="isActiveChat">
+      <div id="no-active-chat" v-else="isActiveChat">
         <h1 style="text-align: center;">CLICCA UNA CHAT PER INIZIARE</h1>
-      </div> -->
+      </div>
       
 
     </div>
