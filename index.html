@@ -64,14 +64,13 @@
               </div>
               <div class="info">
                 <h3> {{ item.nome }} </h3>
-                <span class="last-msg">{{ chatList[indexChat].messaggi[lastMsgIndex].testo }}</span>
+                <span class="last-msg">{{ chatList[indexChat].messaggi.length }}</span>
               </div>
             </div>  
             <div class="right">
-              <span>{{ item.lastMessageDate }}</span>
+              <span>{{ chatList[indexChat].messaggi.date }}</span>
             </div>
           </div>
-
         </div>
       </div>
       
@@ -86,9 +85,9 @@
               <img :src="chatList[indexActive].profilePic" alt="">
             </div>
             <div class="username">
-              <h4 v-model="activeUser"> {{ chatList[indexActive].nome }}</h4>
+              <h4> {{ chatList[indexActive].nome }}</h4>
               <span>Ultimo accesso
-                <span v-model="activeLastMsgDate"> {{ chatList[indexActive].lastMessageDate }} </span>
+                <span> {{ chatList[indexActive].messaggi[chatList[indexActive].messaggi.length-1].date }} </span>
               </span>
             </div>
           </div>
@@ -107,7 +106,7 @@
          <div v-for="el in chatList[indexActive].messaggi">
             <div :class="el.mioMessaggio ? 'message-sent' : 'message-received' ">
               <p>{{ el.testo }}</p>
-              <span>10/01/2020 15:30:55</span>
+              <span>{{ el.date }}</span>
             </div>
           </div>
           

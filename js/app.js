@@ -13,38 +13,34 @@ const app = new Vue({
       { 
         profilePic: "img/avatar_1.jpg", 
         nome: "Michele",
-        lastMessageDate: "01 11 2020 10:52:03",
         messaggi: [ 
-          { testo: "messaggio per Michele", mioMessaggio: true },
-          { testo: "risposta da Michele", mioMessaggio: false }
+          { testo: "messaggio per Michele", mioMessaggio: true, date: "01/01/2020 15:30:55" },
+          { testo: "risposta da Michele", mioMessaggio: false, date: "02/01/2020 15:30:55"}
         ]
       },
       {
         profilePic: "img/avatar_2.jpg", 
         nome: "Fabio",
-        lastMessageDate: "02 11 2020 10:52:03",
         messaggi: [ 
-          { testo: "messaggio per Fabio", mioMessaggio: true },
-          { testo: "risposta da Fabio", mioMessaggio: false }
+          { testo: "messaggio per Fabio", mioMessaggio: true, date: "03/01/2020 15:30:55" },
+          { testo: "risposta da Fabio", mioMessaggio: false, date: "04/01/2020 15:30:55" }
         ]
       },
       {
         profilePic: "img/avatar_3.jpg", 
         nome: "Samuele",
-        lastMessageDate: "03 11 2020 10:52:03",
         messaggi: [ 
-          { testo: "messaggio per Samuele", mioMessaggio: true },
-          { testo: "risposta da Samuele", mioMessaggio: false }
+          { testo: "messaggio per Samuele", mioMessaggio: true, date: "05/01/2020 15:30:55" },
+          { testo: "risposta da Samuele", mioMessaggio: false, date: "06/01/2020 15:30:55" }
         ]      
       },
       {
         profilePic: "img/avatar_4.jpg", 
         nome: "Luisa",
-        lastMessageDate: "04 11 2020 10:52:03",
         messaggi: [ 
-          { testo: "messaggio per Luisa", mioMessaggio: true },
-          { testo: "risposta da Luisa", mioMessaggio: false },
-          { testo: "risposta da Luisa Due", mioMessaggio: false }
+          { testo: "messaggio per Luisa", mioMessaggio: true, date: "07/01/2020 10:30:55" },
+          { testo: "risposta da Luisa", mioMessaggio: false, date: "08/01/2020 15:30:55" },
+          { testo: "risposta da Luisa Due", mioMessaggio: false, date: "09/01/2020 15:30:55" }
         ]
       }
     ],
@@ -67,7 +63,7 @@ const app = new Vue({
       // Cambio l'indice attivo
       // e assegno il valore di indexChat riga 60 html
       this.indexActive = i
-      
+      console.log(this.chatList[this.indexActive].messaggi[this.chatList[this.indexActive].messaggi.length-1].date);
     }
   }
 });
