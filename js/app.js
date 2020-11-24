@@ -40,7 +40,8 @@ const app = new Vue({
         messaggi: [ 
           { testo: "messaggio per Luisa", mioMessaggio: true, date: "07/01/2020 10:30:55" },
           { testo: "risposta da Luisa", mioMessaggio: false, date: "08/01/2020 15:30:55" },
-          { testo: "risposta da Luisa Due", mioMessaggio: false, date: "09/01/2020 15:30:55" }
+          { testo: "risposta da Luisa Due", mioMessaggio: false, date: "25/01/2020 15:30:55" },
+          { testo: "messaggio per Luisa Due", mioMessaggio: true, date: "31/01/2020 10:30:55" }
         ]
       }
     ],

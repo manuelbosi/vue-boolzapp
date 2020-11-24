@@ -64,11 +64,11 @@
               </div>
               <div class="info">
                 <h3> {{ item.nome }} </h3>
-                <span class="last-msg">{{ chatList[indexChat].messaggi.length }}</span>
+                <span class="last-msg">{{ chatList[indexChat].messaggi[chatList[indexChat].messaggi.length-1].testo }}</span>
               </div>
             </div>  
             <div class="right">
-              <span>{{ chatList[indexChat].messaggi.date }}</span>
+              <span>{{ chatList[indexChat].messaggi[chatList[indexChat].messaggi.length-1].date }}</span>
             </div>
           </div>
         </div>
