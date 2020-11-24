@@ -44,7 +44,8 @@ const app = new Vue({
       lastMessage: "test luisa",
       messaggi: [ 
         { testo: "messaggio per Luisa", mioMessaggio: true },
-        { testo: "risposta da Luisa", mioMessaggio: false } ]
+        { testo: "risposta da Luisa", mioMessaggio: false },
+        { testo: "risposta da Luisa Due", mioMessaggio: false } ]
       }
     ],
     activeUser: "Clicca una chat per visualizzare i messaggi",
