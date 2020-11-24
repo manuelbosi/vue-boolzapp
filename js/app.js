@@ -14,7 +14,6 @@ const app = new Vue({
         profilePic: "img/avatar_1.jpg", 
         nome: "Michele",
         lastMessageDate: "01 11 2020 10:52:03",
-        lastMessage: "test michele",
         messaggi: [ 
           { testo: "messaggio per Michele", mioMessaggio: true },
           { testo: "risposta da Michele", mioMessaggio: false }
@@ -24,7 +23,6 @@ const app = new Vue({
         profilePic: "img/avatar_2.jpg", 
         nome: "Fabio",
         lastMessageDate: "02 11 2020 10:52:03",
-        lastMessage: "test fabio",
         messaggi: [ 
           { testo: "messaggio per Fabio", mioMessaggio: true },
           { testo: "risposta da Fabio", mioMessaggio: false }
@@ -34,7 +32,6 @@ const app = new Vue({
         profilePic: "img/avatar_3.jpg", 
         nome: "Samuele",
         lastMessageDate: "03 11 2020 10:52:03",
-        lastMessage: "test samuele",
         messaggi: [ 
           { testo: "messaggio per Samuele", mioMessaggio: true },
           { testo: "risposta da Samuele", mioMessaggio: false }
@@ -44,7 +41,6 @@ const app = new Vue({
         profilePic: "img/avatar_4.jpg", 
         nome: "Luisa",
         lastMessageDate: "04 11 2020 10:52:03",
-        lastMessage: "test luisa",
         messaggi: [ 
           { testo: "messaggio per Luisa", mioMessaggio: true },
           { testo: "risposta da Luisa", mioMessaggio: false },
@@ -53,7 +49,8 @@ const app = new Vue({
       }
     ],
     isActiveChat: false,
-    indexActive: 5 // altrimenti mi seleziona di default index 0
+    indexActive: 5, // altrimenti mi seleziona di default index 0
+    lastMsgIndex: 1 // indice ultimo msg come faccio?
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
