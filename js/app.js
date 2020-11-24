@@ -72,7 +72,7 @@ const app = new Vue({
       let newMessage = {
         testo: this.yourMessage,
         mioMessaggio: true,
-        date: "24/11/2020 10:30:55"
+        date: this.getCurrentDate()
       };
 
       // Pusho il nuovo messaggio nella chat attiva
@@ -84,17 +84,25 @@ const app = new Vue({
       let autoReponse = {
         testo: "risposta automatica",
         mioMessaggio: false,
-        date: "24/11/2020 10:30:55"
+        date: this.getCurrentDate()
       }
 
       // Faccio partire un timer di 1 secondo che esegue la funzione
       // Con la funziona normale non va con l'arrow function sì
-      // 
       setTimeout(() => {
         // Pusho la risposta automatica nella chat attiva
         this.chatList[this.indexActive].messaggi.push(autoReponse);
       }, 1000);
-      
+    },
+    getCurrentDate() {
+      let date = new Date();
+      let day = date.getDate();
+      let month = date.getMonth();
+      let year = date.getFullYear();
+      let hours = date.getHours();
+      let minutes = date.getMinutes();
+      let seconds = date.getSeconds();
+      return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
     }
 
   }
