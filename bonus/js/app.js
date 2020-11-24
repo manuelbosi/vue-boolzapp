@@ -106,8 +106,10 @@ const app = new Vue({
     }
   },
   updated: function () {
+    // Scroll ogni nuovo messaggio
     var container = document.querySelector(".current-chat");
     var scrollHeight = container.scrollHeight;
     container.scrollTop = scrollHeight;
+
   }
 });
