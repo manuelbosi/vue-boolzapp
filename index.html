@@ -104,17 +104,13 @@
         <!-- CURRENT CHAT -->
         <div class="current-chat">
 
-         
-          <div v-for="el in chatList" class="message-sent">
-            <p>{{ el.messaggi[0].testo }}</p>
-            <span>10/01/2020 15:30:55</span>
+         <div v-for="el in chatList[indexActive].messaggi">
+            <div :class="el.mioMessaggio ? 'message-sent' : 'message-received' ">
+              <p>{{ el.testo }}</p>
+              <span>10/01/2020 15:30:55</span>
+            </div>
           </div>
-
-          <div v-for="el in chatList" class="message-received">
-            <p>{{ el.messaggi[1].testo }}</p>
-            <span>10/01/2020 15:30:55</span>
-          </div>
-         
+          
         </div>
 
         <!-- TYPE MESSAGE BAR -->
