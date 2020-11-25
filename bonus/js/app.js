@@ -50,7 +50,9 @@ const app = new Vue({
     yourMessage: "",
     searchInput: "",
     dropdownIndex: null,
-    dropdownIconShow: false
+    dropdownIconShow: false,
+    dropdownIconIndex: null
+
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
