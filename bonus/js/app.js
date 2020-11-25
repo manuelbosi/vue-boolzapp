@@ -89,7 +89,7 @@ const app = new Vue({
       this.yourMessage = "";
 
       let autoReponse = {
-        testo: "risposta automatica",
+        testo: "risposta automatica"+this.indexActive,
         mioMessaggio: false,
         date: this.getCurrentDate()
       }
@@ -112,15 +112,16 @@ const app = new Vue({
       return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
     },
     openDropdown(i) {
-
       this.dropdownIndex = i
-    
+    },
+    removeMessage(i) {
+      this.chatList[this.indexActive].messaggi.splice(i, 1);
     }
   },
-  updated: function () {
-    // Scroll ogni nuovo messaggio
-    let container = document.querySelector(".current-chat");
-    let scrollHeight = container.scrollHeight;
-    container.scrollTop = scrollHeight;
-  }
+  // updated: function () {
+  //   // Scroll ogni nuovo messaggio
+  //   let container = document.querySelector(".current-chat");
+  //   let scrollHeight = container.scrollHeight;
+  //   container.scrollTop = scrollHeight;
+  // }
 });
