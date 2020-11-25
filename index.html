@@ -50,14 +50,29 @@
 
         <!-- SEARCH BOX -->
         <div id="search-box">
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
           <i class="fas fa-search"></i>
+          <input v-model="searchInput" type="text" placeholder="Cerca o inizia una nuova chat">
         </div>
 
         <!-- RECENT CHAT -->       
         <div id="recent-chat">
 
-          <div v-for="(item, indexChat) in chatList" class="chat" :class="indexChat === indexActive ? 'active' : ''" @click="changeChat(indexChat)">
+          <div v-if="item.nome.includes(searchInput)" v-for="(item, indexChat) in chatList" class="chat" :class="indexChat === indexActive ? 'active' : ''" @click="changeChat(indexChat)">
+            <div class="left">
+              <div class="profile-pic">
+                <img :src="item.profilePic" alt="profile">
+              </div>
+              <div class="info">
+                <h3> {{ item.nome }} </h3>
+                <span class="last-msg">{{ item.messaggi[item.messaggi.length-1].testo }}</span>
+              </div>
+            </div>  
+            <div class="right">
+              <span>{{ item.messaggi[item.messaggi.length-1].date }}</span>
+            </div>
+          </div>
+
+          <div v-for="item in filteredChat" class="chat"> 
             <div class="left">
               <div class="profile-pic">
                 <img :src="item.profilePic" alt="profile">
