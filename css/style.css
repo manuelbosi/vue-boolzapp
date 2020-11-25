@@ -236,6 +236,7 @@ IN ALTEZZA */
 .message-sent {
   background-color: #cbfbb3;
   margin-left: 60%;
+  word-wrap: break-word;
 }
 .message-received {
   background-color: #ffffff;
@@ -252,7 +253,7 @@ IN ALTEZZA */
 }
 .message-sent p,
 .message-received p{
-  text-overflow: ellipsis;
+  max-width: 100%;
 }
 .message-sent span,
 .message-received span {

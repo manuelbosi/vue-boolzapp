@@ -46,7 +46,7 @@ const app = new Vue({
       }
     ],
     isActiveChat: false,
-    indexActive: 5, // altrimenti mi seleziona di default index 0
+    indexActive: null, // altrimenti mi seleziona di default index 0
     yourMessage: ""
   },
   methods: {
@@ -91,7 +91,7 @@ const app = new Vue({
       // Con la funziona normale non va con l'arrow function sì
       setTimeout(() => {
         // Pusho la risposta automatica nella chat attiva
-        this.chatList[this.indexActive].messaggi.push(autoReponse);
+        this.chatList[this.indexActive].messaggi.push(newMessage);
       }, 1000);
     },
     getCurrentDate() {
