@@ -49,7 +49,8 @@ const app = new Vue({
     indexActive: 5, // altrimenti mi seleziona di default index 0
     yourMessage: "",
     searchInput: "",
-    dropdownIndex: null
+    dropdownIndex: null,
+    dropdownIconShow: false
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente

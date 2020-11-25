@@ -285,6 +285,7 @@ IN ALTEZZA */
   display: block;
   margin: 5px 0;
   cursor: pointer;
+  font-weight: bolder;
 }
 /* TYPE MESSAGE BAR */
 #message-bar {
@@ -292,9 +293,7 @@ IN ALTEZZA */
   justify-content: space-around;
   align-items: center;
   padding: 20px;
-  /* debug */
   background-color: #f4eee9;
-
 }
 #message-bar input {
   width: 90%;
@@ -307,7 +306,6 @@ IN ALTEZZA */
   font-size: 30px;
   color: grey;
 }
-
 
 /* VUE JS CLASS */
 .active {

@@ -104,9 +104,9 @@
         <div class="current-chat">
 
          <div v-for="(el, index) in chatList[indexActive].messaggi">
-            <div :class="el.mioMessaggio ? 'message-sent' : 'message-received' ">
+            <div :class="el.mioMessaggio ? 'message-sent' : 'message-received' " @mouseover="dropdownIconShow = true" @mouseleave="dropdownIndex = null">
               <p>{{ el.testo }} 
-                <i class="fas fa-chevron-down" @click="openDropdown(index)"> {{ index }} </i>
+                <i class="fas fa-chevron-down" @mouseover="openDropdown(index)" v-if="dropdownIconShow"></i>
                 <div class="dropdown-msg" :class="index === dropdownIndex ? 'open' : '' ">
                   <span>INFO MSG</span>
                   <span>DELETE MSG</span>
