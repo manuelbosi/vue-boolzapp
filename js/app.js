@@ -81,7 +81,7 @@ const app = new Vue({
       // Ripulisco l'input
       this.yourMessage = "";
 
-      let autoReponse = {
+      newMessage = {
         testo: "risposta automatica",
         mioMessaggio: false,
         date: this.getCurrentDate()
