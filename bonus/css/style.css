@@ -165,7 +165,7 @@ IN ALTEZZA */
 #recent-chat {
   display: flex;
   flex-direction: column;
-  height: 500px;
+  height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   scrollbar-width: thin;
