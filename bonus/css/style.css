@@ -253,7 +253,12 @@ IN ALTEZZA */
 }
 .message-sent p,
 .message-received p{
-  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.message-sent i,
+.message-received i {
+  color: #b1b1b1;
 }
 .message-sent span,
 .message-received span {

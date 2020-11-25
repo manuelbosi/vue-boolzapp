@@ -103,9 +103,9 @@
         <!-- CURRENT CHAT -->
         <div class="current-chat">
 
-         <div v-for="el in chatList[indexActive].messaggi">
+         <div v-for="(el, index) in chatList[indexActive].messaggi">
             <div :class="el.mioMessaggio ? 'message-sent' : 'message-received' ">
-              <p>{{ el.testo }}</p>
+              <p>{{ el.testo }} <i class="fas fa-chevron-down"></i></p>
               <span>{{ el.date }}</span>
             </div>
           </div>
