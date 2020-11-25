@@ -48,7 +48,8 @@ const app = new Vue({
     isActiveChat: false,
     indexActive: 5, // altrimenti mi seleziona di default index 0
     yourMessage: "",
-    searchInput: ""
+    searchInput: "",
+    dropdownIndex: null
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -66,6 +67,7 @@ const app = new Vue({
       // e assegno il valore di indexChat riga 60 html
       this.indexActive = i
       // console.log(this.chatList[this.indexActive].messaggi[this.chatList[this.indexActive].messaggi.length-1].date);
+      this.dropdownIndex = null
     },
     sendMessage() {
 
@@ -104,13 +106,15 @@ const app = new Vue({
       let minutes = date.getMinutes();
       let seconds = date.getSeconds();
       return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
+    },
+    openDropdown(i) {
+      this.dropdownIndex = i
     }
   },
   updated: function () {
     // Scroll ogni nuovo messaggio
-    var container = document.querySelector(".current-chat");
-    var scrollHeight = container.scrollHeight;
+    let container = document.querySelector(".current-chat");
+    let scrollHeight = container.scrollHeight;
     container.scrollTop = scrollHeight;
-
   }
 });

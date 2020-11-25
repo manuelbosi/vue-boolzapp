@@ -259,16 +259,33 @@ IN ALTEZZA */
 .message-sent i,
 .message-received i {
   color: #b1b1b1;
+  position: relative;
 }
-.message-sent span,
-.message-received span {
+.message-sent .date,
+.message-received .date {
   position: absolute;
   bottom: 2px;
   font-size: 12px;
   right: 10px;
   color: #b1b1b1;
 }
-
+.dropdown-msg {
+  position: absolute;
+  background-color: #b1b1b1;
+  padding: 10px 20px;
+  border-radius: 10px;
+  right: 0;
+  display: none;
+  z-index: 99;
+}
+.open {
+  display: block;
+}
+.dropdown-msg span {
+  display: block;
+  margin: 5px 0;
+  cursor: pointer;
+}
 /* TYPE MESSAGE BAR */
 #message-bar {
   display: flex;
