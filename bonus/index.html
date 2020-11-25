@@ -50,14 +50,14 @@
 
         <!-- SEARCH BOX -->
         <div id="search-box">
-          <input type="text" placeholder="Cerca o inizia una nuova chat">
+          <input v-model="searchInput" type="text" placeholder="Cerca o inizia una nuova chat">
           <i class="fas fa-search"></i>
         </div>
 
         <!-- RECENT CHAT -->       
         <div id="recent-chat">
 
-          <div v-for="(item, indexChat) in chatList" class="chat" :class="indexChat === indexActive ? 'active' : ''" @click="changeChat(indexChat)">
+          <div v-if="item.nome.includes(searchInput)" v-for="(item, indexChat) in chatList" class="chat" :class="indexChat === indexActive ? 'active' : ''" @click="changeChat(indexChat)">
             <div class="left">
               <div class="profile-pic">
                 <img :src="item.profilePic" alt="profile">

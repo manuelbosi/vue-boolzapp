@@ -71,21 +71,7 @@
               <span>{{ item.messaggi[item.messaggi.length-1].date }}</span>
             </div>
           </div>
-
-          <div v-for="item in filteredChat" class="chat"> 
-            <div class="left">
-              <div class="profile-pic">
-                <img :src="item.profilePic" alt="profile">
-              </div>
-              <div class="info">
-                <h3> {{ item.nome }} </h3>
-                <span class="last-msg">{{ item.messaggi[item.messaggi.length-1].testo }}</span>
-              </div>
-            </div>  
-            <div class="right">
-              <span>{{ item.messaggi[item.messaggi.length-1].date }}</span>
-            </div>
-          </div>
+          
         </div>
       </div>
       
