@@ -50,7 +50,6 @@ const app = new Vue({
     yourMessage: "",
     searchInput: "",
     dropdownIndex: null,
-    dropdownIconShow: false,
     dropdownIconIndex: null
 
   },

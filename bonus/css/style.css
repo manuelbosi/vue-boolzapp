@@ -235,12 +235,11 @@ IN ALTEZZA */
 }
 .message-sent {
   background-color: #cbfbb3;
-  margin-left: 60%;
+  margin-left: 70%;
   word-wrap: break-word;
 }
 .message-received {
   background-color: #ffffff;
-  margin-left: 10%;
 }
 .message-sent,
 .message-received {
@@ -248,7 +247,7 @@ IN ALTEZZA */
   border-radius: 10px;
   position: relative;
   font-size: 18px;
-  width: 40%;
+  width: 30%;
   margin-bottom: 10px;
 }
 .message-sent p,
