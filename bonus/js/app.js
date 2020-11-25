@@ -67,6 +67,8 @@ const app = new Vue({
       // e assegno il valore di indexChat riga 60 html
       this.indexActive = i
       // console.log(this.chatList[this.indexActive].messaggi[this.chatList[this.indexActive].messaggi.length-1].date);
+
+      // Assegno un valore nullo altrimenti rimane aperto al cambio chat
       this.dropdownIndex = null
     },
     sendMessage() {
@@ -108,7 +110,9 @@ const app = new Vue({
       return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
     },
     openDropdown(i) {
+
       this.dropdownIndex = i
+    
     }
   },
   updated: function () {
