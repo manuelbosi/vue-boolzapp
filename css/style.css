@@ -253,7 +253,7 @@ IN ALTEZZA */
 }
 .message-sent p,
 .message-received p{
-  max-width: 100%;
+  width: 100%;
 }
 .message-sent span,
 .message-received span {
