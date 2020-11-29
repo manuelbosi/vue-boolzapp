@@ -83,7 +83,7 @@
 
           <div class="left">
             <div class="profile-pic">
-              <img :src="chatList[indexActive].profilePic" alt="">
+              <img :src="imgPath + chatList[indexActive].profilePic" alt="">
             </div>
             <div class="username">
               <h4> {{ chatList[indexActive].nome }}</h4>
@@ -94,6 +94,7 @@
           </div>
 
           <div class="right">
+            <i class="fas fa-trash-alt" @click="removeAllMessages"></i>
             <i class="fas fa-search"></i>
             <i class="fas fa-paperclip"></i>
             <i class="fas fa-ellipsis-v"></i>

@@ -128,6 +128,9 @@ const app = new Vue({
       };
 
       this.chatList.push(newChatItem);
+    },
+    removeAllMessages() {
+      this.chatList[this.indexActive].messaggi = [];
     }
   },
   // updated: function () {
