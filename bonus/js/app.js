@@ -6,7 +6,7 @@ const app = new Vue({
     // STRUTTURA DATI
     chatList: [
       { 
-        profilePic: "img/avatar_1.jpg", 
+        profilePic: "_1.jpg", 
         nome: "Michele",
         messaggi: [ 
           { testo: "messaggio per Michele", mioMessaggio: true, date: "01/01/2020 15:30:55" },
@@ -14,7 +14,7 @@ const app = new Vue({
         ]
       },
       {
-        profilePic: "img/avatar_2.jpg", 
+        profilePic: "_2.jpg", 
         nome: "Fabio",
         messaggi: [ 
           { testo: "messaggio per Fabio", mioMessaggio: true, date: "03/01/2020 15:30:55" },
@@ -22,7 +22,7 @@ const app = new Vue({
         ]
       },
       {
-        profilePic: "img/avatar_3.jpg", 
+        profilePic: "_3.jpg", 
         nome: "Samuele",
         messaggi: [ 
           { testo: "messaggio per Samuele", mioMessaggio: true, date: "05/01/2020 15:30:55" },
@@ -30,7 +30,7 @@ const app = new Vue({
         ]      
       },
       {
-        profilePic: "img/avatar_4.jpg", 
+        profilePic: "_4.jpg", 
         nome: "Luisa",
         messaggi: [ 
           { testo: "messaggio per Luisa", mioMessaggio: true, date: "07/01/2020 10:30:55" },
@@ -40,6 +40,7 @@ const app = new Vue({
         ]
       }
     ],
+    imgPath: "img/avatar",
     isActiveChat: false,
     indexActive: null,
     yourMessage: "",
@@ -47,6 +48,7 @@ const app = new Vue({
     dropdownIndex: null,
     dropdownIconIndex: null,
     randomQuestions: ["Ok", "Va Bene", "Certo", "Nessun problema", "A domani", "Non ci provare", "Sei fortunato", "Impossibile"],
+    randomName: ["Aldo", "Giovani", "Giacomo"],
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -113,13 +115,13 @@ const app = new Vue({
       this.chatList[this.indexActive].messaggi.splice(i, 1);
     },
     getRandomQuestion() {
-      return this.randomQuestions[Math.floor(Math.random() * this.randomQuestions.length) + 1]
+      return this.randomQuestions[Math.floor(Math.random() * (this.randomQuestions.length-1)) + 1]
     },
     addChat() {
 
       let newChatItem = {
-        profilePic: "img/avatar_5.jpg", 
-        nome: "randomChat",
+        profilePic: "_5.jpg", 
+        nome: "Aldo",
         messaggi: [ 
           { testo: this.getRandomQuestion(), mioMessaggio: true, date: this.getCurrentDate() }
         ]

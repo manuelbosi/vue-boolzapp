@@ -61,7 +61,7 @@
           <div v-if="item.nome.toLowerCase().includes(searchInput.toLowerCase())" v-for="(item, indexChat) in chatList" class="chat" :class="indexChat === indexActive ? 'active' : ''" @click="changeChat(indexChat)">
             <div class="left">
               <div class="profile-pic">
-                <img :src="item.profilePic" alt="profile">
+                <img :src="imgPath + item.profilePic" alt="profile">
               </div>
               <div class="info">
                 <h3> {{ item.nome }} </h3>
