@@ -183,6 +183,7 @@ IN ALTEZZA */
 #recent-chat > .chat > .left {
   flex-basis: 65%;
   display: flex;
+  max-width: 65%;
 }
 #recent-chat > .chat > .left .profile-pic {
   flex-basis: 45%;
@@ -193,8 +194,9 @@ IN ALTEZZA */
   border-radius: 50%;
 }
 #recent-chat > .chat > .left .info {
-  padding-left: 0;
-  flex-wrap: wrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+  /* overflow-wrap: break-word;  */
 }
 #recent-chat > .chat > .right {
   flex-basis: 35%;
@@ -202,10 +204,12 @@ IN ALTEZZA */
   justify-content: flex-end;
   color: #b1b1b1;
   font-size: 14px;
-  flex-shrink: 0;
 }
 #recent-chat > .chat .last-msg {
   color: #b1b1b1;
+}
+#recent-chat > .chat .last-msg::after {
+  content: "...";
 }
 
 /* APP RIGHT */
