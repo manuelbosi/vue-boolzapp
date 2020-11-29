@@ -45,7 +45,8 @@ const app = new Vue({
     yourMessage: "",
     searchInput: "",
     dropdownIndex: null,
-    dropdownIconIndex: null
+    dropdownIconIndex: null,
+    randomQuestions: ["Ok", "Va Bene", "Certo", "Nessun problema", "A domani", "Non ci provare", "Sei fortunato", "Impossibile"]
 
   },
   methods: {
@@ -84,7 +85,7 @@ const app = new Vue({
       this.yourMessage = "";
 
       let autoReponse = {
-        testo: "risposta automatica",
+        testo: this.getRandomQuestion(),
         mioMessaggio: false,
         date: this.getCurrentDate()
       }
@@ -111,6 +112,9 @@ const app = new Vue({
     },
     removeMessage(i) {
       this.chatList[this.indexActive].messaggi.splice(i, 1);
+    },
+    getRandomQuestion() {
+      return this.randomQuestions[Math.floor(Math.random() * this.randomQuestions.length) + 1]
     }
   },
   // updated: function () {
