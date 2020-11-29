@@ -47,7 +47,6 @@ const app = new Vue({
     dropdownIndex: null,
     dropdownIconIndex: null,
     randomQuestions: ["Ok", "Va Bene", "Certo", "Nessun problema", "A domani", "Non ci provare", "Sei fortunato", "Impossibile"]
-
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -115,6 +114,20 @@ const app = new Vue({
     },
     getRandomQuestion() {
       return this.randomQuestions[Math.floor(Math.random() * this.randomQuestions.length) + 1]
+    },
+    addChat() {
+      
+      let newChatMessage = prompt("Inserisci un messaggio per iniziare una chat");
+
+      let newChatItem = {
+        profilePic: "img/avatar_5.jpg", 
+        nome: "NOME",
+        messaggi: [ 
+          { testo: newChatMessage, mioMessaggio: true, date: this.getCurrentDate() }
+        ]
+      };
+
+      this.chatList.push(newChatItem);
     }
   },
   // updated: function () {
