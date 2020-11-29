@@ -4,11 +4,6 @@ const app = new Vue({
   data: {
 
     // STRUTTURA DATI
-    // Array chatList di oggetti
-    // Tutti gli oggetti avranno le stesse proprietà
-    // immagine, nome, messaggi ricevuti, messaggi inviati, data ultimo messaggio, ultimo messaggio
-    // Messaggi ricevuti: array di stringhe
-    // Messaggi inviati: array di stringhe
     chatList: [
       { 
         profilePic: "img/avatar_1.jpg", 
@@ -46,7 +41,7 @@ const app = new Vue({
       }
     ],
     isActiveChat: false,
-    indexActive: 5, // altrimenti mi seleziona di default index 0
+    indexActive: null,
     yourMessage: "",
     searchInput: "",
     dropdownIndex: null,
