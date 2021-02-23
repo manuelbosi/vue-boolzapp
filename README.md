@@ -6,5 +6,9 @@ Tecnologie
 
 ### Caratteristiche (versione completa nella cartella bonus)
 - Invio di messaggi nelle chat già presenti
-- Possibilità di aggiungere una chat tramite il + in alto a sinistra
-- Risposte automatiche prese a casa da un elenco di risposte
+- Aggiungere una chat tramite il + in alto a sinistra
+- Risposte automatiche prese a caso da un elenco di risposte
+- Cancellazione di un messaggio
+
+### Versione Desktop (versione mobile non disponibile)
+<img src="https://raw.githubusercontent.com/manuelbosi/vue-boolzapp/main/screenshot/whatsapp_web.PNG" width="956" height="466">
