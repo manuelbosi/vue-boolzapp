@@ -4,14 +4,9 @@ const app = new Vue({
   data: {
 
     // STRUTTURA DATI
-    // Array chatList di oggetti
-    // Tutti gli oggetti avranno le stesse proprietà
-    // immagine, nome, messaggi ricevuti, messaggi inviati, data ultimo messaggio, ultimo messaggio
-    // Messaggi ricevuti: array di stringhe
-    // Messaggi inviati: array di stringhe
     chatList: [
       { 
-        profilePic: "img/avatar_1.jpg", 
+        profilePic: "_1.jpg", 
         nome: "Michele",
         messaggi: [ 
           { testo: "messaggio per Michele", mioMessaggio: true, date: "01/01/2020 15:30:55" },
@@ -19,7 +14,7 @@ const app = new Vue({
         ]
       },
       {
-        profilePic: "img/avatar_2.jpg", 
+        profilePic: "_2.jpg", 
         nome: "Fabio",
         messaggi: [ 
           { testo: "messaggio per Fabio", mioMessaggio: true, date: "03/01/2020 15:30:55" },
@@ -27,7 +22,7 @@ const app = new Vue({
         ]
       },
       {
-        profilePic: "img/avatar_3.jpg", 
+        profilePic: "_3.jpg", 
         nome: "Samuele",
         messaggi: [ 
           { testo: "messaggio per Samuele", mioMessaggio: true, date: "05/01/2020 15:30:55" },
@@ -35,7 +30,7 @@ const app = new Vue({
         ]      
       },
       {
-        profilePic: "img/avatar_4.jpg", 
+        profilePic: "_4.jpg", 
         nome: "Luisa",
         messaggi: [ 
           { testo: "messaggio per Luisa", mioMessaggio: true, date: "07/01/2020 10:30:55" },
@@ -45,10 +40,15 @@ const app = new Vue({
         ]
       }
     ],
+    imgPath: "img/avatar",
     isActiveChat: false,
-    indexActive: null, // altrimenti mi seleziona di default index 0
+    indexActive: null,
     yourMessage: "",
-    searchInput: ""
+    searchInput: "",
+    dropdownIndex: null,
+    dropdownIconIndex: null,
+    randomQuestions: ["Ok", "Va Bene", "Certo", "Nessun problema", "A domani", "Non ci provare", "Sei fortunato", "Impossibile"],
+    randomName: ["Aldo", "Giovani", "Giacomo"],
   },
   methods: {
     // Al click su ogni chat cambia la chat corrente
@@ -66,6 +66,9 @@ const app = new Vue({
       // e assegno il valore di indexChat riga 60 html
       this.indexActive = i
       // console.log(this.chatList[this.indexActive].messaggi[this.chatList[this.indexActive].messaggi.length-1].date);
+
+      // Assegno un valore nullo altrimenti rimane aperto al cambio chat
+      this.dropdownIndex = null
     },
     sendMessage() {
 
@@ -82,8 +85,8 @@ const app = new Vue({
       // Ripulisco l'input
       this.yourMessage = "";
 
-      newMessage = {
-        testo: "risposta automatica",
+      let autoReponse = {
+        testo: this.getRandomQuestion(),
         mioMessaggio: false,
         date: this.getCurrentDate()
       }
@@ -92,7 +95,7 @@ const app = new Vue({
       // Con la funziona normale non va con l'arrow function sì
       setTimeout(() => {
         // Pusho la risposta automatica nella chat attiva
-        this.chatList[this.indexActive].messaggi.push(newMessage);
+        this.chatList[this.indexActive].messaggi.push(autoReponse);
       }, 1000);
     },
     getCurrentDate() {
@@ -104,6 +107,36 @@ const app = new Vue({
       let minutes = date.getMinutes();
       let seconds = date.getSeconds();
       return `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
+    },
+    openDropdown(i) {
+      this.dropdownIndex = i
+    },
+    removeMessage(i) {
+      this.chatList[this.indexActive].messaggi.splice(i, 1);
+    },
+    getRandomQuestion() {
+      return this.randomQuestions[Math.floor(Math.random() * (this.randomQuestions.length-1)) + 1]
+    },
+    addChat() {
+
+      let newChatItem = {
+        profilePic: "_5.jpg", 
+        nome: "Aldo",
+        messaggi: [ 
+          { testo: this.getRandomQuestion(), mioMessaggio: true, date: this.getCurrentDate() }
+        ]
+      };
+
+      this.chatList.push(newChatItem);
+    },
+    removeAllMessages() {
+      this.chatList[this.indexActive].messaggi = [];
     }
-  }
+  },
+  // updated: function () {
+  //   // Scroll ogni nuovo messaggio
+  //   let container = document.querySelector(".current-chat");
+  //   let scrollHeight = container.scrollHeight;
+  //   container.scrollTop = scrollHeight;
+  // }
 });

@@ -32,6 +32,7 @@
           </div>
 
           <div class="right">
+            <i class="fas fa-plus" @click="addChat"></i>
             <i class="fas fa-circle-notch"></i>
             <i class="fas fa-comment-alt"></i>
             <i class="fas fa-ellipsis-v"></i>
@@ -50,28 +51,27 @@
 
         <!-- SEARCH BOX -->
         <div id="search-box">
-          <i class="fas fa-search"></i>
           <input v-model="searchInput" type="text" placeholder="Cerca o inizia una nuova chat">
+          <i class="fas fa-search"></i>
         </div>
 
         <!-- RECENT CHAT -->       
         <div id="recent-chat">
 
-          <div v-if="item.nome.includes(searchInput)" v-for="(item, indexChat) in chatList" class="chat" :class="indexChat === indexActive ? 'active' : ''" @click="changeChat(indexChat)">
+          <div v-if="item.nome.toLowerCase().includes(searchInput.toLowerCase())" v-for="(item, indexChat) in chatList" class="chat" :class="indexChat === indexActive ? 'active' : ''" @click="changeChat(indexChat)">
             <div class="left">
               <div class="profile-pic">
-                <img :src="item.profilePic" alt="profile">
+                <img :src="imgPath + item.profilePic" alt="profile">
               </div>
               <div class="info">
                 <h3> {{ item.nome }} </h3>
-                <span class="last-msg">{{ item.messaggi[item.messaggi.length-1].testo }}</span>
+                <span class="last-msg" v-if="item.messaggi.length > 0">{{ item.messaggi[item.messaggi.length-1].testo }}</span>
               </div>
             </div>  
             <div class="right">
-              <span>{{ item.messaggi[item.messaggi.length-1].date }}</span>
+              <span v-if="item.messaggi.length > 0">{{ item.messaggi[item.messaggi.length-1].date }}</span>
             </div>
           </div>
-          
         </div>
       </div>
       
@@ -83,17 +83,18 @@
 
           <div class="left">
             <div class="profile-pic">
-              <img :src="chatList[indexActive].profilePic" alt="">
+              <img :src="imgPath + chatList[indexActive].profilePic" alt="">
             </div>
             <div class="username">
               <h4> {{ chatList[indexActive].nome }}</h4>
               <span>Ultimo accesso
-                <span> {{ chatList[indexActive].messaggi[chatList[indexActive].messaggi.length-1].date }} </span>
+                <span v-if="chatList[indexActive].messaggi.length > 0"> {{ chatList[indexActive].messaggi[chatList[indexActive].messaggi.length-1].date }} </span>
               </span>
             </div>
           </div>
 
           <div class="right">
+            <i class="fas fa-trash-alt" @click="removeAllMessages"></i>
             <i class="fas fa-search"></i>
             <i class="fas fa-paperclip"></i>
             <i class="fas fa-ellipsis-v"></i>
@@ -104,10 +105,16 @@
         <!-- CURRENT CHAT -->
         <div class="current-chat">
 
-         <div v-for="el in chatList[indexActive].messaggi">
-            <div :class="el.mioMessaggio ? 'message-sent' : 'message-received' ">
-              <p>{{ el.testo }}</p>
-              <span>{{ el.date }}</span>
+         <div v-for="(el, index) in chatList[indexActive].messaggi">
+            <div :class="el.mioMessaggio ? 'message-sent' : 'message-received' " @mouseleave="dropdownIndex = null, dropdownIconIndex = null">
+              <p @mouseover="dropdownIconIndex = index">{{ el.testo }} 
+                <i class="fas fa-chevron-down" @mouseover="openDropdown(index)" v-if="dropdownIconIndex === index"></i>
+                <div class="dropdown-msg" :class="index === dropdownIndex ? 'open' : '' " >
+                  <span>INFO MSG</span>
+                  <span @click="removeMessage(index)">DELETE MSG</span>
+                </div>
+              </p>
+              <span class="date">{{ el.date }}</span>
             </div>
           </div>
           
@@ -125,10 +132,18 @@
       </div>
 
       <div id="no-active-chat" v-else="isActiveChat">
-        <h1 style="text-align: center;">CLICCA UNA CHAT PER INIZIARE</h1>
-      </div>
-      
 
+        <div id="white-box">
+            <h3>CARATTERISTICHE APP</h3>
+            <ul>
+              <li>Puoi inviare un messaggio</li>
+              <li>Ricevi una risposta automatica dal pc</li>
+              <li>Filtra le chat recenti per nome</li>
+              <li>Elimina i singoli messaggi dalla chat</li>
+            </ul>
+          </div>
+
+      </div>
     </div>
   </div>
   
